@@ -1,5 +1,5 @@
 {
-    "server":["web1.cst.webpod1-cph3.one.com","mysql1.cst.webpod1-cph3.one.com"],
-    "timeout":1,
+    "server":["server1","server2","server3","server4","server5"],
+    "timeout":5,
     "process_name":"apache"
 }

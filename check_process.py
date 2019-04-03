@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 # Command:      check_service.py
-# Description:  Get the single type service alert from monitor and act as specified by command
+# Description:  Get the pid of service running
 # Author:       Rohit Kumar
-# Project:      https://gitlab.one.com/commititup/task-fortanix
+# Project:      https://gitlab.one.com/commititup/Assignment
 
 import sys
 import subprocess
