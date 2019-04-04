@@ -12,7 +12,8 @@ resource "aws_instance" "web-server" {
   security_groups = ["${aws_security_group.web-node.name}"]
   count = "${var.instance_count}"
   
-  key_name = "terraform"
+  key_name = "${var.aws_key_name}"
+  
   tags {
     Name = "web-instance"
   }

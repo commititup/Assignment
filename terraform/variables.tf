@@ -8,6 +8,10 @@ variable "aws_available_region" {
   default     = ["ap-south-1a"]
 }
 
+variable "aws_key_name" {
+  default = "terraform"
+}
+
 variable "instance_count" {
   default = "3"
 }
