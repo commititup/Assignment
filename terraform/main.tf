@@ -9,6 +9,7 @@ provider "aws"{
 resource "aws_instance" "web-server" {
   ami = "ami-007d5db58754fa284"
   instance_type   = "t2.micro"
+  
   security_groups = ["${aws_security_group.web-node.name}"]
   count = "${var.instance_count}"
   
@@ -22,12 +23,13 @@ resource "aws_instance" "web-server" {
     type     = "ssh"
     user     = "ubuntu"
     agent = true
+    private_key = "${file("${var.aws_key_path}")}"
   }
   provisioner "remote-exec" {
     inline=[
-        "apt-get update",
-        "apt-get -y install nginx",
-        "systemctl restart nginx"
+        "sudo apt-get update",
+        "sudo apt-get -y install nginx",
+        "sudo systemctl restart nginx"
         ]
     }
     
@@ -57,7 +59,7 @@ resource "aws_elb" "web" {
 
   # The instance is registered automatically
 
-  instances                   = ["${aws_instance.web-server.id}"]
+  instances                   = ["${aws_instance.web-server.*.id}"]
   cross_zone_load_balancing   = true
   idle_timeout                = 400
   connection_draining         = true

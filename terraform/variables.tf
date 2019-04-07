@@ -9,7 +9,11 @@ variable "aws_available_region" {
 }
 
 variable "aws_key_name" {
-  default = "terraform"
+  default = "KEY_NAME"
+}
+
+variable "aws_key_path" {
+  default = "KEY_PATH"
 }
 
 variable "instance_count" {
