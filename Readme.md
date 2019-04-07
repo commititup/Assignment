@@ -1,5 +1,5 @@
 # Assingments
-1. Terraform script to create a N node cluster with nginx install and a load Balancer attached.Update the aws secret key and aws access key inside variables-sercret and keyname in variables  file.
+1. Terraform script to create a N node cluster with nginx install and a load Balancer attached.Update the aws secret key and aws access key inside variables-sercret and keyname,keyfile path in variables  file.
 
 ```
 $ cd terraform
